@@ -10,3 +10,33 @@ var uppercaseLetters;
 var lowercaseLetters;
 var numbers;
 var specialCharacters;
+
+//  Ask user for password criteria, store in variables, create an object, return object
+function passwordQuestions() {
+    resetApp();
+    passwordLength = prompt('How long would you like your password to be? Choose a number between 8 - 128.');
+    uppercaseLetters = confirm('Would you like uppercase letters?');
+    lowercaseLetters = confirm('Would you like lowercase letters?');
+    numbers = confirm('Would you like numbers?');
+    specialCharacters = confirm('Would you like special characters?');
+  
+    if (passwordLength < 8 || passwordLength > 128 || passwordLength === null) {
+      alert('Your selected password length has to be at least 8 characters and no more than 128.');
+      passwordQuestions();
+    }
+  
+    if (!uppercaseLetters && !lowercaseLetters && !numbers && !specialCharacters) {
+        alert('Please select at least one character type to include in your password.');
+        passwordQuestions();
+    }
+  
+    var options = {
+       passwordLength: passwordLength,
+       uppercaseLetters: uppercaseLetters,
+       lowercaseLetters: lowercaseLetters,
+       numbers: numbers,
+       specialCharacters: specialCharacters}
+  
+    return options;
+  }
+  

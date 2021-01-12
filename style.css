@@ -69,7 +69,7 @@ header {
     display: block;
     clear: both;
   }
-  
+
   .btn {
     border: none;
     background-color: hsl(360, 91%, 36%);
@@ -85,3 +85,12 @@ header {
     text-align: center;
     cursor: pointer;
   }
+  button[disabled] {
+    cursor: default;
+    background: #c0c7cf;
+  }
+  
+  .float-right {
+    float: right;
+  }
+  
