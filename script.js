@@ -77,6 +77,7 @@ function writePassword() {
   
     passwordText.value = password;
   } 
+
   // Function to reset passwordCharacters array
 function resetApp() {
     passwordCharacters = [];
@@ -86,3 +87,6 @@ function resetApp() {
     numbers;
     specialCharacters;
 }
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
