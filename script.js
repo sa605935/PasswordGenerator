@@ -40,3 +40,6 @@ function passwordQuestions() {
     return options;
   }
   
+  // if statements to add chosen arrays to passwordCharacters array, for loop to choose random letter for user preferences length
+function generatePassword() {
+    var options = passwordQuestions();
