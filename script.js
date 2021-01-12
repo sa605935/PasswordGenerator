@@ -69,7 +69,7 @@ function generatePassword() {
     
     return password;
   } 
-  
+
  // Write password to the #password input
 function writePassword() {
     var password = generatePassword(); //gp => func 
@@ -77,3 +77,12 @@ function writePassword() {
   
     passwordText.value = password;
   } 
+  // Function to reset passwordCharacters array
+function resetApp() {
+    passwordCharacters = [];
+    passwordLength;
+    uppercaseLetters;
+    lowercaseLetters;
+    numbers;
+    specialCharacters;
+}
