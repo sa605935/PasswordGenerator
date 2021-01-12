@@ -40,6 +40,32 @@ function passwordQuestions() {
     return options;
   }
   
-  // if statements to add chosen arrays to passwordCharacters array, for loop to choose random letter for user preferences length
+// if statements to add chosen arrays to passwordCharacters array, for loop to choose random letter for user preferences length
 function generatePassword() {
     var options = passwordQuestions();
+  
+    if (options.uppercaseLetters) {
+      passwordCharacters = passwordCharacters.concat(uppercaseLettersArray);
+    }
+  
+    if (options.lowercaseLetters) {
+      passwordCharacters = passwordCharacters.concat(lowercaseLettersArray);
+    }
+  
+    if (options.numbers) {
+      passwordCharacters = passwordCharacters.concat(numbersArray);
+    }
+  
+    if (options.specialCharacters) {
+      passwordCharacters = passwordCharacters.concat(specialCharactersArray);
+    }
+  
+    var password = "";
+  
+    for (var i = 0; i < options.passwordLength; i++) {
+        var randomCharacter = passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+        password = password + randomCharacter;
+    }
+    
+    return password;
+  } 
